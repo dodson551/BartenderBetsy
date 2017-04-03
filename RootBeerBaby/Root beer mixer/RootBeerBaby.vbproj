@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D02418CC-6E38-42C0-B2ED-D06002AB6DB7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RootBeerMixer.My.MyApplication</StartupObject>
+    <RootNamespace>RootBeerMixer</RootNamespace>
+    <AssemblyName>RootBeerBaby</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>RootBeerBaby.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>RootBeerBaby.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>retouched_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoScaleButton">
+      <HintPath>dll\AutoScaleButton.dll</HintPath>
+    </Reference>
+    <Reference Include="DragDropGrid">
+      <HintPath>..\..\..\Users\Jacob\Downloads\DragDropGrid\DragDropGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>dll\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON, Version=1.0.3800.25561, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\LitJSON.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PhotoList, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\PhotoList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.74.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="LitJson" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="PhotoList" />
+    <Import Include="RootBeerMixer" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="cDIN3Relay.vb" />
+    <Compile Include="cHttpServer.vb" />
+    <Compile Include="confirmDialog.Designer.vb">
+      <DependentUpon>confirmDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="confirmDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddFaveFlave.Designer.vb" />
+    <Compile Include="frmAddFaveFlave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmFlave.Designer.vb" />
+    <Compile Include="frmConfirmFlave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreate_Flave.Designer.vb" />
+    <Compile Include="frmCreate_Flave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDavesFaves.Designer.vb" />
+    <Compile Include="frmDavesFaves.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb" />
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb" />
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMyFaves.Designer.vb" />
+    <Compile Include="frmMyFaves.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.vb" />
+    <Compile Include="frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestWebRequest.Designer.vb">
+      <DependentUpon>frmTestWebRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestWebRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWelcome.Designer.vb">
+      <DependentUpon>frmWelcome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWelcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageDialog.Designer.vb" />
+    <Compile Include="ImageDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modByteFunctions.vb" />
+    <Compile Include="modDrinkMixer.vb" />
+    <Compile Include="modProcessWebRequest.vb" />
+    <Compile Include="modRating.vb" />
+    <Compile Include="RatingDialog.Designer.vb">
+      <DependentUpon>RatingDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RatingDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dsIngredients.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIngredients.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsIngredients.vb">
+      <DependentUpon>dsIngredients.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="modLitJSONHelper.vb" />
+    <Compile Include="modTimer.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="WebClientWithTimeout.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeleteDialog.Designer.vb">
+      <DependentUpon>DeleteDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modPages.vb" />
+    <Compile Include="modSQLiteControl.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SaveDialogBox.Designer.vb">
+      <DependentUpon>SaveDialogBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SaveDialogBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="confirmDialog.resx">
+      <DependentUpon>confirmDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteDialog.resx">
+      <DependentUpon>DeleteDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RatingDialog.resx">
+      <DependentUpon>RatingDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaveDialogBox.resx">
+      <DependentUpon>SaveDialogBox.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DavesFlaves.db" />
+    <None Include="dsIngredients.xsc">
+      <DependentUpon>dsIngredients.xsd</DependentUpon>
+    </None>
+    <None Include="dsIngredients.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIngredients.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsIngredients.xss">
+      <DependentUpon>dsIngredients.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\RootBeerTab.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\root-beer-float.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange ribbon bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dT7e49ync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dT7e49ync1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goldstar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1405571189_01.Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1405571194_33.Thumbs-Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1405571213_24.TV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Root Beer Baby Banner1.bmp" />
+    <None Include="Resources\curls.png" />
+    <None Include="Resources\Main_Page_Backdrop.png" />
+    <None Include="Resources\Main_Page_Backdrop1.png" />
+    <None Include="Resources\Main_Page_Backdrop2.png" />
+    <None Include="Resources\Main_Banner.png" />
+    <None Include="Resources\Main_bottom.png" />
+    <None Include="Resources\Create_a_Flave.png" />
+    <None Include="Resources\Fave_Flaves_Banner.png" />
+    <None Include="Resources\button_banner.png" />
+    <None Include="Resources\Create_a_Flave1.png" />
+    <None Include="Resources\Create_Flave_Banner.png" />
+    <None Include="Resources\Add_Fave.png" />
+    <None Include="Resources\Settings_button.png" />
+    <None Include="Resources\Home_button.png" />
+    <None Include="Resources\Create_New_button.png" />
+    <None Include="Resources\Create_New_button1.png" />
+    <None Include="Resources\Save_button.png" />
+    <None Include="Resources\Create_Flave_Navigation.png" />
+    <None Include="Resources\My_Faves_button.png" />
+    <None Include="Resources\Add_new_button.png" />
+    <None Include="Resources\Delete_button.png" />
+    <None Include="Resources\Search_button.png" />
+    <None Include="Resources\Refresh_button.png" />
+    <None Include="Resources\create_flave!_btn.png" />
+    <None Include="Resources\create_flave!_btn1.png" />
+    <None Include="Resources\refresh_page_button.png" />
+    <None Include="Resources\Favorites_button.png" />
+    <None Include="Resources\Remove_button.png" />
+    <None Include="Resources\clear_all_button.png" />
+    <None Include="Resources\Add_to_button.png" />
+    <None Include="Resources\Daves_Faves_banner.png" />
+    <None Include="Resources\return_and_edit.png" />
+    <None Include="Resources\return_and_edit2.png" />
+    <None Include="Resources\user_button.png" />
+    <None Include="Resources\Save_public_button.png" />
+    <None Include="Resources\star_grey.png" />
+    <None Include="Resources\star_gold.png" />
+    <Content Include="retouched_logo.ico" />
+    <Content Include="Root Beer Baby Banner 2.bmp" />
+    <Content Include="x64\LitJSON.dll" />
+    <Content Include="x64\PhotoList.dll" />
+    <Content Include="x64\System.Data.SQLite.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\System.Data.SQLite.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\1410581763_678134-sign-check-128.png" />
+    <None Include="Resources\1410581863_Close.png" />
+    <None Include="Resources\1410582072_stop.png" />
+    <None Include="Resources\Root Beer Baby Banner 2.bmp" />
+    <None Include="Resources\Root Beer Baby Banner.bmp" />
+    <Content Include="SQLite.Interop.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\LitJSON.dll" />
+    <Content Include="x86\PhotoList.dll" />
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\ginger.jpg" />
+    <None Include="Resources\honey.jpg" />
+    <None Include="Resources\licorice root.jpg" />
+    <None Include="Resources\sarsparilla.jpg" />
+    <None Include="Resources\star anise.jpg" />
+    <None Include="Resources\sugar cane.jpg" />
+    <None Include="Resources\vanilla.jpg" />
+    <None Include="Resources\wintergreen.jpg" />
+    <None Include="Resources\rootbeerbaby.jpg" />
+    <None Include="Resources\rootbeerbaby.png" />
+    <None Include="Resources\1407365282_arrow-left-outline.png" />
+    <None Include="Resources\1407365718_Plus__Orange.png" />
+    <None Include="Resources\1407365761_list-remove.png" />
+    <None Include="Resources\1407365769_3.png" />
+    <None Include="Resources\1407365827_7.png" />
+    <None Include="Resources\1407365827_71.png" />
+    <None Include="Resources\1407367433_519902-130_ArrowRightDouble.png" />
+    <None Include="Resources\1407365827_72.png" />
+    <None Include="Resources\1407367433_519902-130_ArrowRightDouble1.png" />
+    <None Include="Resources\markbeerbaby.png" />
+    <Content Include="rootbeerbaby.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" Condition="Exists('$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets')" />
+  <Target Name="BeforeBuild" Condition="Exists('$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets')">
+    <Message Text="Set the Build Number to: $(VersionMajor).$(VersionMinor).$(BUILD_NUMBER).$(SVN_REVISION)" />
+    <FileUpdate Files="My Project\AssemblyInfo.vb" Regex="Version\(&quot;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}&quot;\)" ReplacementText="Version(&quot;$(VersionMajor).$(VersionMinor).$(BUILD_NUMBER).$(SVN_REVISION)&quot;)" Condition=" (('$(BUILD_NUMBER)' != '') And ('$(SVN_REVISION)' != '')) " />
+    <FileUpdate Files="My Project\AssemblyInfo.vb" Regex="Version\(&quot;\d{1,3}\.\d{1,3}\.\*&quot;\)" ReplacementText="Version(&quot;$(VersionMajor).$(VersionMinor).$(BUILD_NUMBER).$(SVN_REVISION)&quot;)" Condition=" (('$(BUILD_NUMBER)' != '') And ('$(SVN_REVISION)' != '')) " />
+    <FileUpdate Files="My Project\AssemblyInfo.vb" Regex="Version\(&quot;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}&quot;\)" ReplacementText="Version(&quot;$(VersionMajor).$(VersionMinor).*&quot;)" Condition=" (('$(BUILD_NUMBER)' == '') Or ('$(SVN_REVISION)' == '')) " />
+    <WriteLinesToFile Condition=" (('$(BUILD_NUMBER)' != '') And ('$(SVN_REVISION)' != '')) " File="FileVersion.txt" Lines="$(VersionMajor).$(VersionMinor).$(BUILD_NUMBER).$(SVN_REVISION)" Overwrite="true" Encoding="Unicode" />
+  </Target>
+</Project>
