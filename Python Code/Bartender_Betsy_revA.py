@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import threading
 
 # --------------------------------------------------------------------------
 # Bartender Betsy Control Code
@@ -34,6 +35,9 @@ p13 = 6		# Pin 31 (GPIO06)
 p14 = 12	# Pin 32 (GPIO12)
 p15 = 13	# Pin 33 (GPIO13)
 p16 = 19	# Pin 35 (GPIO19)
+
+# Define other variables needed for control code
+pour_duration = 1 		# Duration in seconds needed for 1 oz of liquid pour
 
 # Setup all pins as output
 
@@ -117,11 +121,46 @@ def all_pumps_off():
 	GPIO.output(p16,False)
 	print("\nAll pumps off.")
 
-def Sample_Function():
-	# Do stuff
-	sample = 1
-	# Return answer after doing stuff
-	return sample
+def pump_toggle(ID, status):
+	if status == 1:
+		try:
+			GPIO.output(ID,True)
+			print ("Pump " & ID & " on.")
+		except Exception, e:
+			raise e
+	elif status == 0:
+		try:
+			GPIO.output(ID,False)
+			print ("Pump " & ID & " off.")
+		except Exception, e:
+			raise e
+
+def pump_actuate(ID,duration):
+	try:
+		GPIO.output(ID,True)
+		time.sleep(duration)
+		GPIO.output(ID,False)
+	except Exception, e:
+		raise e
+
+# Sample of how I think recipe creation would go
+
+# User selects recipe, using pumps 1,2,3
+if ing_1 in recipe: 	# Check to see if ingridient 1 is used in the recipe list
+	ID_1 = 'p1' 	# Assign ID of pump (p1-p16)
+	duration_1 = amount * pour_duration 	# Calculate the duration of the pour
+	ing_1_trd = threading.Thread(target=pump_actuate(ID_1,duration_1)) 	# Begin new thread
+# Repeat steps for all ingridients in recipe list
+elif ing_2 in recipe:
+	ID_2 = 'p2'
+	duration_2 = amount * pour_duration
+	ing_2_trd = threading.Thread(target=pump_actuate(ID_2,duration_2))
+elif ing_3 in recipe:
+	ID_3 = 'p3'
+	duration_3 = amount * pour_duration
+	ing_3_trd = threading.Thread(target=pump_actuate(ID_3,duration_3))
+else
+	# Other ingridient threads would cover all of the pumps
 
 
 
